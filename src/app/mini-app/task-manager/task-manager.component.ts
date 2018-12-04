@@ -6,14 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-manager.component.css']
 })
 export class TaskManagerComponent implements OnInit {
-  counter = 0
+  counter = 0;
+  salary = 90;
+  mydate = new Date();
+friends = ['nancy','parul','trpti','karishma','juhi']
+number=['11','18','14','15','21','43']  
   myTasks = [
     'Go and Buy a dress',
     'Plan Your Birthday',
     'unWrap the gifts',
     'Go to some place'
   ]
-  mycompletedTask =[];
+  mycompletedTask = [];
   constructor() { }
 
   ngOnInit() {
@@ -25,8 +29,8 @@ export class TaskManagerComponent implements OnInit {
     this.oneTask = ""
   }
   taskDone(currentTask) {
-
+    console.log("Index value" + currentTask);
     this.mycompletedTask.push(this.myTasks[currentTask])
-  
+    this.myTasks.splice(currentTask, 1)
   }
 }
