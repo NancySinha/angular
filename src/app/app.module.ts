@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import {HttpClientModule} from '@angular/common/http';
+import{ReactiveFormsModule}from '@angular/forms'
 
 
 
@@ -14,6 +15,13 @@ import { TaskManagerComponent } from './mini-app/task-manager/task-manager.compo
 import { StringSortPipePipe } from './myPipes/string-sort-pipe.pipe';
 import { NumberSortPipePipe } from './myPipes/number-sort-pipe.pipe';
 import { ConsumeLocalService1Component } from './consumeService/consume-local-service1/consume-local-service1.component';
+import { UserApicomponentComponent } from './remote/user-apicomponent/user-apicomponent.component';
+import { AutoSearchPipe } from './myPipes/auto-search.pipe';
+import { UserDetailComponent } from './remote/user-detail/user-detail.component';
+import { TempleleteComponent } from './form/templelete/templelete.component';
+import { ModelFormComponent } from './form/model-form/model-form.component'
+
+
 
 
 @NgModule({
@@ -25,11 +33,18 @@ import { ConsumeLocalService1Component } from './consumeService/consume-local-se
     TaskManagerComponent,
     StringSortPipePipe,
     NumberSortPipePipe,
-    ConsumeLocalService1Component
+    ConsumeLocalService1Component,
+    UserApicomponentComponent,
+    AutoSearchPipe,
+    UserDetailComponent,
+    TempleleteComponent,
+    ModelFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
        {
         path: 'family',
@@ -51,8 +66,24 @@ component:ConsumeLocalService1Component  },
         {
         path: 'task',
         component: TaskManagerComponent
+      },
+      {
+        path: 'remote',
+        component: UserApicomponentComponent
+      },
+      {
+        path:'remoteData/myid',
+        component:UserDetailComponent
+      },
+       {
+        path:'Tempelate',
+        component:TempleleteComponent
+      },
+      {
+        path:'ModelForm',
+        component:ModelFormComponent
       }
-    ]),
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
