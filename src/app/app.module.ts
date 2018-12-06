@@ -1,10 +1,11 @@
+import { browser } from 'protractor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
-import{ReactiveFormsModule}from '@angular/forms'
-
+import { HttpClientModule} from '@angular/common/http';
+import{ ReactiveFormsModule}from '@angular/forms';
+import{ BrowserAnimationsModule}from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -19,7 +20,10 @@ import { UserApicomponentComponent } from './remote/user-apicomponent/user-apico
 import { AutoSearchPipe } from './myPipes/auto-search.pipe';
 import { UserDetailComponent } from './remote/user-detail/user-detail.component';
 import { TempleleteComponent } from './form/templelete/templelete.component';
-import { ModelFormComponent } from './form/model-form/model-form.component'
+import { ModelFormComponent } from './form/model-form/model-form.component';
+import { AnimationComponent } from './animation/animation.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { ProductsComponent } from './products/products.component'
 
 
 
@@ -38,13 +42,17 @@ import { ModelFormComponent } from './form/model-form/model-form.component'
     AutoSearchPipe,
     UserDetailComponent,
     TempleleteComponent,
-    ModelFormComponent
+    ModelFormComponent,
+    AnimationComponent,
+    LandingpageComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
        {
         path: 'family',
@@ -82,6 +90,18 @@ component:ConsumeLocalService1Component  },
       {
         path:'ModelForm',
         component:ModelFormComponent
+      },
+      {
+        path: 'Animate',
+        component: AnimationComponent
+      },
+      {
+        path: 'Landingpage',
+        component: LandingpageComponent
+      },
+      {
+        path: 'products',
+        component: ProductsComponent
       }
     ])
   ],

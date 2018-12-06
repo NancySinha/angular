@@ -10,7 +10,9 @@ export class RestapicomponentService {
     getRemoteuser(){
         return this.http.get("http://localhost:3000/users")
     }
-  
+  getAllproducts(){
+    return this.http.get("http://localhost:3000/products" )
+  }
   
 createUser(user){
 return this.http.post("http://localhost:3000/users",user)
@@ -21,4 +23,5 @@ DeleteUser(id){
 detailUser(id){
     return this.http.get("http://localhost:3000/users/"+id)
   } 
+ 
 }
